@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_75sdp">
+
+            <RelativeLayout
+                android:id="@+id/panel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:textColor="#AAEEEEEE"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="1" />
+
+                <RelativeLayout
+                    android:id="@+id/rlImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_toEndOf="@+id/number"
+                    android:layout_toRightOf="@+id/number">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/image"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        app:riv_corner_radius="10dp"
+                        tools:srcCompat="@drawable/ic_default_album_art" />
+
+                    <ImageView
+                        android:id="@+id/quick_play_pause"
+                        android:layout_width="@dimen/_23sdp"
+                        android:layout_height="@dimen/_23sdp"
+                        android:layout_centerInParent="true"
+                        tools:srcCompat="@drawable/ic_play"
+                        tools:visibility="gone" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/llTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:layout_toLeftOf="@+id/preview_button"
+                    android:layout_toRightOf="@+id/rlImage"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_light"
+                        android:maxLines="1"
+                        android:textColor="@color/text_color_back"
+                        android:textSize="18sp"
+                        tools:text="Galaxy Supernova" />
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_light"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/color_aaa"
+                        android:textSize="15sp"
+                        tools:text="Girls 'Generation" />
+
+                </LinearLayout>
+
+                <com.mp3song.playmusic.utils.CircularPlayPauseProgressBar
+                    android:id="@+id/preview_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/menu_button"
+                    android:alpha="0.9"
+                    android:padding="5dp" />
+
+                <ImageView
+                    android:id="@+id/menu_button"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_7sdp"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_vertical_more"
+                    app:tint="#DDF5F5F5" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

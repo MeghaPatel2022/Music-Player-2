@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:background="@color/background_color">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.mp3song.playmusic.utils.MPRecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingBottom="@dimen/_10sdp"
+                app:fastScrollAutoHide="true"
+                app:fastScrollAutoHideDelay="1500"
+                app:fastScrollPopupBackgroundSize="88dp"
+                app:fastScrollPopupBgColor="@color/flatOrange"
+                app:fastScrollPopupPosition="adjacent"
+                app:fastScrollPopupTextColor="@android:color/primary_text_dark"
+                app:fastScrollPopupTextSize="46sp"
+                app:fastScrollThumbColor="@color/flatOrange"
+                tools:listitem="@layout/item_song_normal" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_oval"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="17dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="15dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

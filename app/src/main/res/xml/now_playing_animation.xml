@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@layout/fragment_now_playing_expanded"
+        app:constraintSetStart="@layout/fragment_now_playing_layer"
+        app:duration="350">
+
+    </Transition>
+
+
+</MotionScene>

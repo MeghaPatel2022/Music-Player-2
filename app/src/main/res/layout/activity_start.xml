@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:paddingVertical="@dimen/_30sdp"
+        tools:context="com.mp3song.playmusic.StartActivity">
+
+        <ImageView
+            android:id="@+id/imgVec"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_350sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/ic_vector" />
+
+        <ImageView
+            android:id="@+id/imgStart"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_below="@+id/imgVec"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/get_start" />
+
+    </RelativeLayout>
+
+</layout>

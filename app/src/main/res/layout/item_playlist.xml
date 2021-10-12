@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                app:riv_corner_radius="@dimen/_7sdp"
+                app:srcCompat="@drawable/ic_default_album_art" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:text="@string/library"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/color_aaa"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/playlist_over"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:background="@drawable/ripple_effect" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    
+</layout>

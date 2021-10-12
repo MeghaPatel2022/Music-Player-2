@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onClick"
+            type="com.mp3song.playmusic.MainActivity.MyClickHandlers" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/appRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/background_color"
+        tools:context="com.mp3song.playmusic.MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_color">
+
+            <FrameLayout
+                android:id="@+id/layer_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_color"
+                tools:visibility="visible">
+
+                <FrameLayout
+                    android:id="@+id/child_layer_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_color" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/llMain"
+            layout="@layout/menu_bottom_sheet_layout" />
+
+        <include
+            android:id="@+id/llMainAlbum"
+            layout="@layout/menu_bottom_album_sheet" />
+
+        <include
+            android:id="@+id/llMainPlayList"
+            layout="@layout/menu_bottom_playlist_sheet" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

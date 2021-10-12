@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:background="@color/background_color"
+        android:orientation="vertical"
+        tools:context="com.mp3song.playmusic.ui.fragments.SearchFragment">
+
+        <RelativeLayout
+            android:id="@+id/rlSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="?actionBarSize"
+                android:layout_height="?actionBarSize"
+                android:background="@drawable/ripple_oval"
+                android:padding="@dimen/_13sdp"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:text="@string/search"
+                android:textColor="@color/text_color_back"
+                android:textSize="@dimen/_20sdp" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchSong"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_below="@+id/back"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/search_box"
+                android:gravity="center"
+                android:visibility="visible"
+                app:closeIcon="@drawable/ic_close_white_24dp"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@android:color/transparent"
+                app:queryHint="Search"
+                app:searchHintIcon="@drawable/ic_search"
+                app:showDividers="none"
+                app:theme="@style/AppSearchView" />
+
+        </RelativeLayout>
+
+        <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/_60sdp"
+            app:fastScrollAutoHide="true"
+            app:fastScrollAutoHideDelay="1500"
+            app:fastScrollPopupBackgroundSize="88dp"
+            app:fastScrollPopupBgColor="@color/text_color_back"
+            app:fastScrollPopupPosition="adjacent"
+            app:fastScrollPopupTextColor="@android:color/primary_text_dark"
+            app:fastScrollPopupTextSize="46sp"
+            app:fastScrollThumbColor="@color/teal_200"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/item_song_normal"
+            tools:orientation="vertical" />
+
+    </LinearLayout>
+
+</layout>

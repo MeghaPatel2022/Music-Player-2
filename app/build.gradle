@@ -1,0 +1,200 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId "com.daily.playmusic.music.musicplayer2"
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        renderscriptTargetApi 29
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        multiDexEnabled true
+        dexOptions {
+            javaMaxHeapSize "4g"
+        }
+        setProperty("archivesBaseName", "Music Player-$versionName")
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86–64', 'arm64-v8a', 'armeabi', 'armeabi-v7a'
+            universalApk true
+        }
+    }
+
+    productFlavors {
+    }
+
+    defaultConfig {
+        buildConfigField("boolean", "HIDE_INCOMPLETE_FEATURES", "true")
+    }
+
+    buildTypes {
+        build {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    "src/main/res/",
+                    "src/main/res/layouts/cardlayer",
+                    "src/main/res/layouts/screen",
+                    "src/main/res/layouts/partial",
+                    "src/main/res/layouts/optionbottomsheet",
+                    "src/main/res/layouts/sample"
+            ]
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+repositories {
+    maven { url "https://jitpack.io" }
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    // App Compat
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+
+    // ConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
+    // Design
+    implementation 'com.google.android.material:material:1.5.0-alpha02'
+
+    // CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    // Palette
+    implementation 'androidx.palette:palette:1.0.0'
+
+    // Annotation
+    implementation 'javax.annotation:javax.annotation-api:1.2'
+
+    // Preference
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
+    implementation 'androidx.preference:preference:1.1.1'
+
+    // Easy Permission
+    implementation 'pub.devrel:easypermissions:0.3.0'
+
+    // sdp library
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    // Over scroll Effect on Scrollable View
+    implementation 'me.everything:overscroll-decor-android:1.0.4'
+
+    // Kotlin
+    testImplementation 'junit:junit:4.13.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21"
+
+    implementation 'com.daasuu:EasingInterpolator:1.3.0'
+    implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
+
+    // MK Loader
+    implementation 'com.tuyenmonkey:mkloader:1.4.0'
+
+    // AV LoaderNOw
+    implementation 'com.wang.avi:library:2.1.3'
+
+    // Butter Knife
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    // Round Image View
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // Glide V4
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+
+    // RecyclerView FastScroller
+    implementation 'com.github.kabouzeid:RecyclerView-FastScroll:1.0.16-kmod'
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Retrofit 2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    // Gson & Gson Converter
+    implementation 'com.google.code.gson:gson:2.8.7'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // JAudioTagger
+    implementation 'com.github.AdrienPoupa:jaudiotagger:2.2.3'
+
+    // Photo View
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+    // Jsoup HTML parser library @ https://jsoup.org/
+    implementation 'org.jsoup:jsoup:1.13.1'
+
+    // Fancy Toast
+    implementation 'com.github.GrenderG:Toasty:1.5.0'
+
+    // App Them Helper
+    implementation 'com.github.kabouzeid:app-theme-helper:1.3.10'
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+
+    // JBox2d
+    implementation 'org.jbox2d:jbox2d-library:2.1.2.2'
+
+    //Spring Back Layout for over scroll effect
+    implementation 'com.github.ldt-libs:SpringBackLayout:1.0'
+
+    // InsetsView
+    implementation 'com.github.ldt-libs:InsetsView:1.1'
+
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.3.1'
+
+    // LottieAnimation
+    implementation 'com.airbnb.android:lottie:3.7.1'
+}
+apply plugin: 'kotlin-android-extensions'
